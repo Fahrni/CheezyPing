@@ -1,0 +1,26 @@
+HKCR
+{
+	Cheezy.Utilities.1 = s 'Cheezy Utilities'
+	{
+		CLSID = s '{80FCCD51-1590-4463-866F-C8CAC2BF1305}'
+	}
+	Cheezy.Utilities = s 'Cheezy Utilities'
+	{
+		CLSID = s '{80FCCD51-1590-4463-866F-C8CAC2BF1305}'
+		CurVer = s 'Cheezy.Utilities.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {80FCCD51-1590-4463-866F-C8CAC2BF1305} = s 'Cheezy Utilities'
+		{
+			ProgID = s 'Cheezy.Utilities.1'
+			VersionIndependentProgID = s 'Cheezy.Utilities'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{58FD62DB-2166-41DA-94A3-A5C6C3913598}'
+		}
+	}
+}

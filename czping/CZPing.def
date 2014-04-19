@@ -1,0 +1,6 @@
+; CZPing.def : Declares the module parameters.
+
+LIBRARY      "CZPing.DLL"
+
+EXPORTS
+	WeblogsDotComPing     @1

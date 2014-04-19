@@ -1,0 +1,38 @@
+// czpcom.idl : IDL source for czpcom.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (czpcom.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(3E614490-96A1-4249-9833-C1ADB88F59B4),
+		dual,
+		helpstring("ICZPUtl Interface"),
+		pointer_default(unique)
+	]
+	interface ICZPUtl : IDispatch
+	{
+		[id(1), helpstring("Ping, a Weblogs.com XML-RPC style ping.")] HRESULT Ping(BSTR SiteToPing, BSTR SiteUpdateName, BSTR SiteUpdateURL, BSTR* ResultString);
+	};
+[
+	uuid(58FD62DB-2166-41DA-94A3-A5C6C3913598),
+	version(1.0),
+	helpstring("Rob's Cheezy Utilities 1.0")
+]
+library Cheezy
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(80FCCD51-1590-4463-866F-C8CAC2BF1305),
+		helpstring("Utilities Class")
+	]
+	coclass Utilities
+	{
+		[default] interface ICZPUtl;
+	};
+};
